@@ -1,6 +1,6 @@
 # SeqFinder
 
-### SeqFinder is a unix-based commandline tool for finding genomics sequences from an input positoin. Note: this only works with single chromosomed organisms. Otherwise, split chromosomes into separate files. 
+### SeqFinder is a unix-based commandline tool for finding genomic sequences from an specified position. Note: if the genome contains multiple chromosomes, split chromosomes into separate files. Additionally, remove fasta header
 
 ### The index file should contain a list of genomic positions separated by new lines
 
