@@ -7,17 +7,17 @@ Note: if the genome contains multiple chromosomes, split chromosomes into separa
 current version: 1.1
 
 ## Find: find.py
-define a start and stop positon and return the corresponding sequence.
-python3 find.py [-options] <path/to/genome.fa> <start> <stop>
+define a start and stop positon and return the corresponding sequence.\
+python3 find.py [-options] <path/to/genome.fa> <start> <stop>\
 -fa option outputs sequence in fasta format
   
-example: python3 find.py genome.fa 1 100
+example: python3 find.py genome.fa 1 100\
 returns the sequence from position 1 to 100
 
 
 ## FindBed: findbed.py
-input a tab separated file with chromosome, start position, stop position
-python3 find.py [-options] genome.fa bed.tsv
+input a tab separated file with chromosome, start position, stop position\
+python3 find.py [-options] genome.fa bed.tsv\
 returns fasta file with sequences from indicated start and stop positions. -t option outputs sequences in tab separated format. 
 
 
@@ -27,5 +27,5 @@ The specified position(s) should be in a line sperated file, here called index.t
 
 python3 adjacent.py [-options] genome.fa index.txt -b <positions back> -f <positions forward>
 
-example: python3 adjacent.py genome.fa index.txt -f 10 -b 10
+example: python3 adjacent.py genome.fa index.txt -f 10 -b 10\
 returns sequences surrounding positions in index file
