@@ -1,21 +1,36 @@
+#!/usr/bin/env python3
+
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-g', type=str)    #path/genome.txt
-parser.add_argument('-i', type=str)    #path/index.txt
-parser.add_argument('-b', type=int)    #define window backwords
-parser.add_argument('-f', type=int)    #define window forwards
+
+parser.add_argument('genome', type=str, help="First argument is the path to genome sequence in fasta format")
+parser.add_argument('index', type=str, help = "Second argument is the path to index file containing genomic positions separated by newlines")
+parser.add_argument('-b', type=int, help="Number of nucleotides to display behind (5' of) position specified in -i file")
+parser.add_argument('-f', type=int, help="Number of nucleotides to display in-front of (3' of) position specified in -i file")
+parser.add_argument('-t','--tabular', action="store_true", help="output in tab seperated format")
 
 args = parser.parse_args()
 
-with open(args.g, 'r') as genome:
-    genome_seq = genome.read().replace('\n', '')
-    with open(args.i, 'r') as index_pos:
-        mC_pos = index_pos.readlines()
+#genome_file = open(args.genome)
+
+with open(args.genome, 'r') as genome:
+    """remove fasta header"""
+    genome_sequence_initial = genome.readlines()[1:]
+    genome_sequence = ''.join(genome_sequence_initial)
+
+    """open and parse index file"""
+    with open(args.index, 'r') as index_positions:
+        mC_pos = index_positions.readlines()
         for line in mC_pos:
             line = int(line)
-            pos = line - 1
-            backwords = pos - args.b
-            forwords = pos + 1 + args.f
-            logos_seq = genome_seq[backwords:forwords]
-            print('%i\t%s' % (line, logos_seq))
+            position = line - 1
+            backwords = position - args.b  #5' of position
+            forwords = position + 1 + args.f  # 3' of position; correct for 0-based indexing
+
+            """create and print sequence object"""
+            sequence_subset = genome_sequence[backwords:forwords]
+            if args.tabular:
+                print('%i\t%s' % (line, sequence_subset))  # Tab separated
+            else:
+                print('>%i\n%s' % (line, sequence_subset))  # fasta format
