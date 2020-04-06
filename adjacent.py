@@ -12,8 +12,6 @@ parser.add_argument('-t','--tabular', action="store_true", help="output in tab s
 
 args = parser.parse_args()
 
-#genome_file = open(args.genome)
-
 with open(args.genome, 'r') as genome:
     """remove fasta header"""
     genome_sequence_initial = genome.readlines()[1:]
