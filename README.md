@@ -1,6 +1,6 @@
 # SeqFinder
 
-### SeqFinder is a set of miscellaneous python3 scripts for finding genomic sequences at specified sequence positions. These scripts are called from the command line. 
+### SeqFinder is a set of python3 scripts for finding genomic sequences at specified sequence positions. These scripts are called from the command line. 
 
 Note: if the genome contains multiple chromosomes, split chromosomes into separate files. 
 
