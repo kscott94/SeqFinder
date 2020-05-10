@@ -28,7 +28,7 @@ primer_R = rc(args.r).lower() + RC(args.seq[ len(args.seq)-args.length_R: ] ).up
 
 F_Tm = 0
 for base in primer_F:
-    F_Tm = F_Tm + 2
+    F_Tm += 2
 
 R_Tm = 0
 for base in primer_R:
