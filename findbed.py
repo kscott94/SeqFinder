@@ -14,7 +14,7 @@ with open(args.g, 'r') as genome:
 
     """remove fasta header"""
     genome_sequence_initial = genome.readlines()[1:]
-    genome_sequence = ''.join(genome_sequence_initial)
+    genome_sequence = ''.join(genome_sequence_initial).replace("\n","")
 
     """open and parse bed file"""
     with open(args.b, "r") as txt:
