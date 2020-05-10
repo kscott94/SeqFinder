@@ -15,7 +15,7 @@ args = parser.parse_args()
 with open(args.genome, 'r') as genome:
     """remove fasta header"""
     genome_sequence_initial = genome.readlines()[1:]
-    genome_sequence = ''.join(genome_sequence_initial)
+    genome_sequence = ''.join(genome_sequence_initial).replace("\n","")
 
     """open and parse index file"""
     with open(args.index, 'r') as index_positions:
