@@ -23,12 +23,12 @@ with open(args.genome, 'r') as genome:
         for line in mC_pos:
             line = int(line)
             position = line - 1
-            backwords = position - args.b  #5' of position
-            forwords = position + 1 + args.f  # 3' of position; correct for 0-based indexing
+            backwards = position - args.b  #5' of position
+            forwards = position + 1 + args.f  # 3' of position; correct for 0-based indexing
 
             """create and print sequence object"""
-            sequence_subset = genome_sequence[backwords:forwords]
+            sequence_subset = genome_sequence[backwards:forwards]
             if args.tabular:
                 print('%i\t%s' % (line, sequence_subset))  # Tab separated
             else:
-                print('>%i\n%s' % (line, sequence_subset))  # fasta format
+                print('>%i\n%s' % (line, sequence_subset))  # fasta format is default output type
