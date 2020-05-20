@@ -30,6 +30,6 @@ with open(args.g, 'r') as genome:
             """print sequence in fasta format"""
             sequence_subset = genome_sequence[pos_start:pos_stop]
             if args.tabular:
-                print('%i\t%i\t%s' % (pos_start, pos_stop, sequence_subset))  # Tab sep
+                print('%i\t%i\t%s' % (pos_start, pos_stop, sequence_subset))  # Tab separated output
             else:
-                print('>%s positions %s-%s\n%s' % (chrom, pos_start, pos_stop, sequence_subset))  # fasta format
+                print('>%s positions %s-%s\n%s' % (chrom, pos_start, pos_stop, sequence_subset))  # fasta output is default
