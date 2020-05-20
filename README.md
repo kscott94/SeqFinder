@@ -39,9 +39,13 @@ Unlike the other scripts in this repository, fasta pull is NOT run from the comm
 input: line separated list of gene tags, master fasta file, and output file name. 
 
 ## primer design: primer_design.py
-Design primers for an input DNA sequence. Indicate the length of the forward and reverse primers. Optionally, specify 5' and extension sequences for your primers. 
+Design primers for an input DNA sequence. Indicate the length of the forward and reverse primers. Optionally, specify 5' and extension sequences for your primers. Primers will be utputed in fasta format. 
 
-python3 primer_design.py [-options]
+python3 primer_design.py [-options] dna sequence
 
-example: python3 adjacent.py genome.fa index.txt -f 10 -b 10\
-returns sequences surrounding positions in index file
+options:\
+-f:5' extension to forward primer\
+-r: 5' extension to reverse primer
+
+example: python3 primer_design.py TGCAGCTAACTCTTAGGCTTAGC 15 18 
+returns forward and reverse primer sequences of 15 and 18 bases, respectively in fasta format, against the input sequence. 
