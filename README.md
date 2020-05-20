@@ -4,7 +4,7 @@
 
 Note: if the genome contains multiple chromosomes, split chromosomes into separate files. 
 
-current version: 1.1
+current version: 1.2
 
 ## Find: find.py
 define a start and stop positon in the genome and return the corresponding sequence between those sites.\
