@@ -44,7 +44,7 @@ Design primers for an input DNA sequence. Indicate the length of the forward and
 python3 primer_design.py [-options] dna sequence
 
 options:\
--f:5' extension to forward primer\
+-f: 5' extension to forward primer\
 -r: 5' extension to reverse primer
 
 example: python3 primer_design.py TGCAGCTAACTCTTAGGCTTAGC 15 18 
