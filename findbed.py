@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 with open(args.g, 'r') as genome:
 
-    """remove fasta header"""
+    """skip fasta header and create a sting from the genome sequence"""
     genome_sequence_initial = genome.readlines()[1:]
     genome_sequence = ''.join(genome_sequence_initial).replace("\n","")
 
