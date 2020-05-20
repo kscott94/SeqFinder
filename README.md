@@ -33,6 +33,7 @@ example: python3 adjacent.py genome.fa index.txt -f 10 -b 10\
 returns sequences surrounding positions in index file
 
 ## Fasta pull: fasta_pull.py
+packages: biopython
 Unlike the other scripts in this repository, fasta pull is NOT run from the command line. This script takes in a line separated list of gene tags, and pulls out the fasta sequence of those genes from a master fasta file that contains set of gene sequences. For example, I downloaded from KEGG a fasta file with every gene in fasta format from the model species I investigate. I can provide a list of gene names and pull out the fasta sequences of those genes from the master fasta file creating a subsetted fasta with only the genes of interest. 
 
 input: line separated list of gene tags, master fasta file, and output file name. 
