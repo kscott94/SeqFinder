@@ -3,10 +3,10 @@
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('genome', type=str)    #path/genome.fa
-parser.add_argument('start', type=int)
-parser.add_argument('stop', type=int )
-parser.add_argument('-fa','--fasta', action="store_true", help="output in fasta format")
+parser.add_argument('genome', type=str, help="path/to/genome.fa")
+parser.add_argument('start', type=int, help="start position/start of genomic interval")
+parser.add_argument('stop', type=int, help="end position/end of genomic interval")
+parser.add_argument('-fa','--fasta', action="store_true", help="option to output in fasta format")
 
 args = parser.parse_args()
 
