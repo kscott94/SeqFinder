@@ -4,8 +4,8 @@ import argparse
 import csv
 
 parser = argparse.ArgumentParser()
-parser.add_argument('g', type=str)    #path/genome.fa (with fasta header)
-parser.add_argument('b', type=str)    #path/bed.tab
+parser.add_argument('g', type=str, help="path/to/genome.fa")
+parser.add_argument('b', type=str, help="path/to/bed.tab")   
 parser.add_argument('-t','--tabular', action="store_true", help="output in tab separated format. default is fasta output")
 
 args = parser.parse_args()
