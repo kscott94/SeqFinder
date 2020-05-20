@@ -25,7 +25,7 @@ returns fasta file with sequences from indicated start and stop positions. -t op
 define a single position and return the sequence with a specified amount of bases before and after that position.
 The specified position(s) should be in a line sperated file, here called index.txt. -t option allows output in tab separated format.
 
-python3 adjacent.py [-options] genome.fa index.txt -b <positions back> -f <positions forward>
+python3 adjacent.py [-options] genome.fa index.txt -b < positions bac k> -f < positions forward >
 
 example: python3 adjacent.py genome.fa index.txt -f 10 -b 10\
 returns sequences surrounding positions in index file
