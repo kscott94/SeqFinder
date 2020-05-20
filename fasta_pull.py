@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from Bio import SeqIO
 
 list_of_genes = "./TS559_m5c_transcripts"
