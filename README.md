@@ -1,13 +1,13 @@
 # SeqFinder
 
-### SeqFinder is a set of python3 scripts for finding genomic sequences at specified sequence positions. These scripts are called from the command line. 
+### SeqFinder was originally inspired by my desire to create sequence logos plots of specified genomic intervals  and potentially identify conserved DNA sequence motifs. I had a list of hundreds of genomic positions that potentially shared sequence identity, but I needed an efficient way to query the sequence information surrounding each site. SeqFinder is a set of commandline interfaced python3 scripts for finding genomic sequences at specified sequence positions. At the moment fasta_pull.py is not called from the commandline.  
 
 Note: if the genome contains multiple chromosomes, split chromosomes into separate files. 
 
 current version: 1.1
 
 ## Find: find.py
-define a start and stop positon and return the corresponding sequence.\
+define a start and stop positon in the genome and return the corresponding sequence between those sites.\
 python3 find.py [-options] <path/to/genome.fa> <start> <stop>\
 -fa option outputs sequence in fasta format
   
@@ -18,14 +18,21 @@ returns the sequence from position 1 to 100
 ## FindBed: findbed.py
 input a tab separated file with chromosome, start position, stop position\
 python3 find.py [-options] genome.fa bed.tsv\
-returns fasta file with sequences from indicated start and stop positions. -t option outputs sequences in tab separated format. 
+returns fasta file with sequences from indicated start and stop positions. \
+-t option outputs sequences in tab separated format. By default, output is in fasta format.
 
 
 ## Adjacent: adjacent.py
 define a single position and return the sequence with a specified amount of bases before and after that position.
-The specified position(s) should be in a line sperated file, here called index.txt. -t option allows output in tab separated format.
+The specified position(s) should be in a line separated file, here called index.txt. \
+-t option allows output in tab separated format. By default, output is in fasta format.
 
-python3 adjacent.py [-options] genome.fa index.txt -b < positions bac k> -f < positions forward >
+python3 adjacent.py [-options] genome.fa index.txt -b < positions 5' > -f < positions 3' >
 
 example: python3 adjacent.py genome.fa index.txt -f 10 -b 10\
 returns sequences surrounding positions in index file
+
+## Fasta pull: fasta_pull.py
+Unlike the other scripts in this repository, fasta pull is NOT run from the command line. This script takes in a line separated list of gene tags, and pulls out the fasta sequence of those genes from a master fasta file that contains set of gene sequences. For example, I downloaded from KEGG a fasta file with every gene in fasta format from the model species I investigate. I can provide a list of gene names and pull out the fasta sequences of those genes from the master fasta file creating a subsetted fasta with only the genes of interest. 
+
+input: line separated list of gene tags, master fasta file, and output file name. 
