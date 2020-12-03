@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+
+import argparse
+parser = argparse.ArgumentParser()
+
+parser.add_argument('sequence', type=str, help='input sequence')
+parser.add_argument('-u','--uppercase', action="store_true", help="return sequence in upper case")
+parser.add_argument('-l','--lowercase', action="store_true", help="return sequence in lower case")
+
+
+args = parser.parse_args()
+
+def reverse_complement(seq):
+    complement = {'A': 'T', 'C': 'G', 'G': 'C', 'T': 'A', 'a': 't', 'c': 'g', 'g': 'c', 't': 'a'}
+    if args.uppercase:
+        seq = seq.upper()
+    if args.lowercase:
+        seq = seq.lower()
+    rev_complement = "".join(complement.get(base, base) for base in reversed(seq))
+    return rev_complement
+
+
+print("\n", reverse_complement(args.sequence), sep = '')
+
