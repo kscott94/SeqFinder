@@ -49,3 +49,9 @@ options:\
 
 example: python3 primer_design.py TGCAGCTCGGCAAACTCTTAGGCTTAGC 12 13
 returns forward and reverse primer sequences of 12 and 12 bases, respectively in fasta format, against the input sequence.The fasta will also contain the estimated Tm for each primer.  
+
+## Reverse compliment: revcomp
+Reverse complimnet input sequence
+
+## Make bed file: makebedfile.py
+make an empty bed file with chrosome name, start position and stop poistion based on defined region width and step sizes.
