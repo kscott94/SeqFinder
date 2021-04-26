@@ -1,6 +1,8 @@
 # SeqFinder
 
-### SeqFinder was originally inspired by my desire to create sequence logos plots of specified genomic intervals  and potentially identify conserved DNA sequence motifs. I had a list of hundreds of genomic positions that potentially shared sequence identity, but I needed an efficient way to query the sequence information surrounding each site. SeqFinder is a set of commandline interfaced python3 scripts for finding genomic sequences at specified sequence positions. At the moment fasta_pull.py is not called from the commandline.  
+### SeqFinder was origianly created to wrangle data to build sequence logos plots at specified genomic intervals and potentially identify conserved DNA/RNA sequence motifs. I had a list of hundreds of genomic positions that potentially shared sequence identity, but I needed an efficient way to query the sequence information surrounding each site. 
+
+### SeqFinder is a set of commandline interfaced python3 scripts for finding genomic sequences at specified sequence positions. At the moment fasta_pull.py is not called from the commandline.  
 
 Note: if the genome contains multiple chromosomes, split chromosomes into separate files. 
 
