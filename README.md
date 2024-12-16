@@ -1,6 +1,6 @@
 # SeqFinder
 
-### SeqFinder is a set of commandline interfaced python3 scripts for finding genomic sequences at specified coordinate positions in the Thermococcus kodakarensis genome.  
+### SeqFinder is a set of commandline interfaced python3 scripts for finding genomic sequences at specified coordinate positions in the *Thermococcus kodakarensis* genome.  
 
 Note: If the genome contains multiple chromosomes, split chromosomes into separate files. 
 
